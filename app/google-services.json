@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "284792220487",
+    "project_id": "blog-golb",
+    "storage_bucket": "blog-golb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284792220487:android:42c1f0c284d6124cfdfa62",
+        "android_client_info": {
+          "package_name": "com.example.onetapas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmWKRPd-DEUzYkVDMRy8kXqd11oksUzME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
