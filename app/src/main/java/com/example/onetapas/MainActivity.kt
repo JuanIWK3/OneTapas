@@ -42,33 +42,21 @@ class MainActivity : ComponentActivity() {
                 val state = remember { SignInState() }
                 var user: GoogleUser? by remember { mutableStateOf(null) }
 
-                SingInTapas(
-                    state = state,
-                    clientId = "clientID",
-                    onTokenIdReceived = { tokenId ->
-                        Log.d(TAG, "Google tokenId: $tokenId")
-                        user = getUserFromTokenId(tokenId)
-                    },
-                    onDialogDismissed = { message ->
-                        Log.d(TAG, "Dialog dismissed: $message")
-                    }
-                )
-
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                     if (user != null) {
                         Text(text = "Welcome ${user?.fullName}")
                     } else {
-                        Button(onClick = { state.open() }) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                if (state.opened) {
-                                    CircularProgressIndicator(
-                                        color = Color.White,
-                                    )
-                                }
-                                Spacer(modifier = Modifier.width(8.dp))
-                                Text(text = "Sign in")
+                        OneTapGoogleButton(
+                            state = state,
+                            clientId = "bytheway",
+                            onTokenIdReceived = { tokenId ->
+                                Log.d(TAG, "Google tokenId: $tokenId")
+                                user = getUserFromTokenId(tokenId)
+                            },
+                            onDialogDismissed = { message ->
+                                Log.d(TAG, "Dialog dismissed: $message")
                             }
-                        }
+                        )
                     }
                 }
             }
